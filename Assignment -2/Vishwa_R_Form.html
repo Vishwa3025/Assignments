@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Farewell Registration</title>
+  </head>
+  <body class="flex justify-center font-['Lexend'] bg-blue-300">
+    <section class="w-2/5 m-1"></section>
+    <section
+      class="flex justify-center w-3/5 m-1 bg-cover bg-center h-full"
+      style="background-image: url('Emoji.jpg')"
+    >
+      <section class="bg-white rounded-3xl m-8 w-[80%] m-1 overflow-auto">
+        <!-- Heading -->
+        <div
+          class="flex justify-center items-center m-2 bg-red-600 rounded-tl-3xl rounded-tr-3xl"
+        >
+          <p
+            class="my-5 text-5xl font-bold font-['Pacifico'] text-white tracking-wider"
+          >
+            Farewell Bashh !
+          </p>
+        </div>
+
+        <!-- Info -->
+        <div class="text-xl my-4 text-[#ff9933]">
+          <p class="mx-4 my-3">
+            Date : <span class="font-semibold">29 Feb, 2024</span>
+          </p>
+          <p class="mx-4 my-3">
+            Time : <span class="font-semibold">12 pm - 5 pm</span>
+          </p>
+          <p class="mx-4 my-3 text-2xl">
+            Place : <span class="font-semibold">Park Elanza, Chennai.</span>
+          </p>
+        </div>
+
+        <!-- Form -->
+        <div class="-black mx-4 my-4">
+          <form action="">
+            <div class="flex">
+              <!-- Name -->
+              <div class="flex flex-col px-5 py-1.5 w-1/2">
+                <label class="text-lg my-2">First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  class="rounded-3xl p-2 focus:outline-none bg-gray-200"
+                  required
+                />
+              </div>
+              <div class="flex flex-col px-5 py-1.5 w-1/2">
+                <label class="text-lg my-2">Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  class="rounded-3xl p-2 focus:outline-none bg-gray-200"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="flex flex-col px-5 py-1.5">
+              <label class="text-lg my-2">Email</label>
+              <input
+                type="text"
+                name="email"
+                class="rounded-3xl p-2 focus:outline-none bg-gray-200"
+              />
+            </div>
+
+            <!-- Phone Number -->
+            <div class="flex flex-col px-5 py-1.5">
+              <label class="text-lg my-2">Phone Number</label>
+              <input
+                type="tel"
+                name="phone"
+                class="rounded-3xl p-2 focus:outline-none bg-gray-200"
+              />
+            </div>
+
+            <!-- Department -->
+            <div class="flex flex-col px-5 py-1.5">
+              <label class="text-lg my-2">Department</label>
+              <select
+                name="department"
+                class="rounded-3xl py-2 px-4 focus:outline-none bg-gray-200"
+              >
+                <option value="select" selected>-Select-</option>
+                <option value="cse">Computer Science</option>
+                <option value="ece">Electronics and Communication</option>
+                <option value="eee">Electrical Electronics</option>
+                <option value="mech">Mechanical</option>
+                <option value="it">Information Technology</option>
+                <option value="csbs">
+                  Computer Science and Business Systems
+                </option>
+              </select>
+            </div>
+
+            <!-- Intrested -->
+            <div class="flex flex-col px-5 py-1.5">
+              <label class="text-lg my-2">Intrested in</label>
+              <div class="flex justify-evenly">
+                <div class="flex">
+                  <input type="checkbox" name="dj" class="my-3 mx-5 w-4 h-4" />
+                  <label class="my-2">Videoshoot</label>
+                </div>
+                <div class="flex">
+                  <input type="checkbox" name="dj" class="my-3 mx-5 w-4 h-4" />
+                  <label class="my-2">Photoshoot</label>
+                </div>
+                <div class="flex">
+                  <input type="checkbox" name="dj" class="my-3 mx-5 w-4 h-4" />
+                  <label class="my-2">Solo Singing</label>
+                </div>
+                <div class="flex">
+                  <input type="checkbox" name="dj" class="my-3 mx-5 w-4 h-4" />
+                  <label class="my-2">Solo Dance</label>
+                </div>
+                <div class="flex">
+                  <input type="checkbox" name="dj" class="my-3 mx-5 w-4 h-4" />
+                  <label class="my-2">Group Dance</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Food -->
+            <div class="flex flex-col px-5 py-1.5 w-1/2">
+              <label class="text-lg my-2">Food</label>
+              <div class="flex">
+                <input type="radio" class="my-3 mx-5 w-4 h-4" />
+                <label class="my-2">Vegetarian</label>
+              </div>
+              <div class="flex">
+                <input type="radio" class="my-3 mx-5 w-4 h-4" />
+                <label class="my-2">Non-Vegetarian</label>
+              </div>
+            </div>
+
+            <!-- Payment mode -->
+            <div class="flex flex-col px-5 py-1.5">
+              <label class="text-lg my-2">Payment Mode</label>
+              <div class="flex">
+                <input
+                  type="radio"
+                  name="cash"
+                  value="cash"
+                  class="my-3 mx-5 w-4 h-4"
+                />
+                <label class="my-2">Cash</label>
+              </div>
+              <div class="flex">
+                <input
+                  type="radio"
+                  name="upi"
+                  class="my-3 mx-5 w-4 h-4"
+                  value="upi"
+                />
+                <label class="my-2"
+                  >UPI (If UPI, Pay to this Number - 7904654890)
+                </label>
+              </div>
+            </div>
+
+            <div class="flex justify-center py-6">
+              <button
+                class="text-white text-lg font-semibold rounded-3xl px-10 py-2 bg-red-600"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>
