@@ -59,7 +59,9 @@
                 <input
                   type="text"
                   name="firstName"
-                  class="rounded-3xl p-2 px-4 focus:outline-none bg-gray-200 border-gray-300 "
+                  class="rounded-3xl p-2 px-4 focus:outline-none bg-gray-200 border-gray-300"
+                  minlength="3"
+                  maxlength="50"
                   required
                 />
               </div>
@@ -69,6 +71,9 @@
                   type="text"
                   name="lastName"
                   class="rounded-3xl p-2 px-4 focus:outline-none bg-gray-200"
+                  minlength="3"
+                  maxlength="50"
+                  required
                 />
               </div>
             </div>
@@ -80,6 +85,7 @@
                 type="text"
                 name="email"
                 class="rounded-3xl p-2 px-4 focus:outline-none bg-gray-200"
+                required
               />
             </div>
 
@@ -90,6 +96,7 @@
                 type="tel"
                 name="phone"
                 class="rounded-3xl p-2 px-4 focus:outline-none bg-gray-200"
+                required
                 maxlength="10"
               />
             </div>
@@ -100,6 +107,7 @@
               <select
                 name="department"
                 class="rounded-3xl py-2 px-4 focus:outline-none bg-gray-200"
+                required
               >
                 <option value="select" selected>-Select-</option>
                 <option value="cse">Computer Science</option>
