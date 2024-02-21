@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Guess the Number</title>
+  </head>
+  <body
+    class="flex justify-center items-center h-screen border bg-cover backdrop-blur-sm"
+    style="background-image: url(Vishwa_image1.jpg)"
+  >
+    <section class="py-10 px-20 w-[40%] rounded-xl bg-white">
+      <h1 class="text-4xl font-bold text-center py-3">Guess the Number</h1>
+      <hr class="border-black border-2 my-3" />
+
+      <div class="py-5 flex justify-evenly">
+        <label for="" class="font-semibold text-lg">Enter your Number : </label>
+        <input
+          type="num"
+          id="inp"
+          class="border-black border px-3 rounded-lg"
+        />
+        <button
+          onclick="guessNumber()"
+          class="bg-black text-white rounded-xl px-5 py-1"
+        >
+          Check
+        </button>
+      </div>
+
+      <div>
+        <p id="chance" class="text-center font-semibold"></p>
+        <p id="result" class="text-center font-semibold"></p>
+
+        <div class="flex justify-center">
+          <button
+            onclick="re()"
+            id="restart"
+            class="bg-black text-white rounded-xl px-5 py-1 my-3"
+            style="display: none"
+          >
+            Click to Restart
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Javascript code -->
+    <script>
+      let count = 3;
+
+      // Generating Random Number
+      let ranInt = Math.floor(Math.random() * 15);
+      document.getElementById(
+        "chance"
+      ).textContent = `You have ${count} chances left`;
+
+      function guessNumber() {
+        // Get user Input
+        let usrInt = Number(document.getElementById("inp").value);
+
+        // Range check
+        if (usrInt < 0 || usrInt > 15) {
+          alert("Please enter the number betwween 0 and 15.");
+        }
+
+        count--;
+
+        if (usrInt === ranInt) {
+          document.getElementById("result").textContent =
+            "Congratulations,You have guessed the correct number.";
+
+          // Reload Function
+          location.reload();
+        } else if (count === 0) {
+          document.getElementById(
+            "chance"
+          ).textContent = `You have ${count} chances to win the Game`;
+
+          document.getElementById(
+            "result"
+          ).textContent = `Incorrect Guess. The correct answer is ${ranInt}.`;
+
+          document.getElementById("restart").style.display = "block";
+        } else {
+          // Show the chance
+          document.getElementById(
+            "chance"
+          ).textContent = `You have ${count} chances to win the Game`;
+
+          // Reset Input Value
+          document.getElementById("inp").value = "";
+        }
+      }
+
+      function re() {
+        location.reload();
+      }
+    </script>
+  </body>
+</html>
