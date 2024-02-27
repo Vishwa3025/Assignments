@@ -6,20 +6,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <form method="post" action="{% url 'login' %}">
-      {% csrf_token %}
-      <label for="username">Username</label>
-      <input type="text" name="username" id="inp" /><br />
-      <label for="password">Password</label>
-      <input type="password" name="password" id="" /><br />
-      <button type="submit">Login</button>
-    </form>
 
-    {% if error %}
-    <p style="color: red">{{error}}</p>
-    {% endif %}
+  <body class="bg-gray-100 h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded shadow-md w-96">
+      <h2 class="text-2xl font-semibold mb-4">Registration Form</h2>
+
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="mb-4">
+          <label for="username" class="block text-sm font-medium text-gray-600"
+            >Username:</label
+          >
+          <input
+            type="text"
+            name="username"
+            class="mt-1 p-2 w-full border rounded-md"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="password" class="block text-sm font-medium text-gray-600"
+            >Password:</label
+          >
+          <input
+            type="password"
+            name="password"
+            class="mt-1 p-2 w-full border rounded-md"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-blue-500 text-white p-2 rounded-md"
+        >
+          Login
+        </button>
+      </form>
+      {% if error %}
+      <p style="color: red">{{error}}</p>
+      {% endif %}
+    </div>
   </body>
 </html>
