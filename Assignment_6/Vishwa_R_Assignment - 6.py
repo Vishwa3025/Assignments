@@ -65,13 +65,12 @@ def displayInventory():
 
 
 def saveInventory():
-    file_path = 'D:\\T-Machine-Assignments\\Assignment_5\\Inventory_Management.csv'
 
-    file_exists = os.path.exists(file_path)
+    file_exists = os.path.exists('Inventory_Management.csv')
 
     mode = 'a' if file_exists else 'w'
 
-    with open(file_path, mode, newline='') as f:
+    with open('Inventory_Management.csv', mode, newline='') as f:
         header = ['Product ID', 'Product Name', 'Category', 'Price', 'Quantity']
         write = csv.DictWriter(f, fieldnames=header)
 
@@ -95,7 +94,7 @@ while True:
     print('1. Add Product')
     print('2. Update Product')
     print('3. Display Inventory')
-    print('4. Exit')
+    print('4. Save and Exit')
 
     choice = int(input('Enter your Choice: '))
     
@@ -113,3 +112,4 @@ while True:
         case any:
             print("Invalid Choice.")
             break
+
