@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+  </head>
+  <body>
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      <label for="username">Username</label>
+      <input type="text" name="username" id="inp" /><br />
+      <label for="password">Password</label>
+      <input type="password" name="password" id="" /><br />
+      <button type="submit">Login</button>
+    </form>
+
+    {% if error %}
+    <p style="color: red">{{error}}</p>
+    {% endif %}
+  </body>
+</html>
