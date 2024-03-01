@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% block title %}
+ Vegetables
+{% endblock %}
+
+{% block content %} 
+<div class="p-8">
+  <div class="flex justify-center">
+    <h1 class="text-4xl font-semibold pb-8">Fresh Vegetables</h1>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
+    {% for vegetable in vegetablesList %}
+    <div class="bg-white p-6 rounded-lg shadow-md hover:scale-[1.05] hover:transition duration-300 ease-in-out">
+      <div class="flex justify-center">
+        <img
+          src="{{ vegetable.image.url }}"
+          alt="{{ vegetable.name }}"
+          class="w-fit h-52 object-cover mb-4 rounded-md"
+        />
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        <h2 class="text-xl font-bold m-1">{{ vegetable.Name }}</h2>
+        <h2 class="text-xl font-semibold m-1">
+          Price: ${{ vegetable.Price_per_Kg }} per kg
+        </h2>
+        <p class="text-gray-700 m-1">Stock: {{ vegetable.Stock_in_Kg }} kg</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
